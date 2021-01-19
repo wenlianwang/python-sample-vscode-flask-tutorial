@@ -8,7 +8,6 @@ resources:
     source: TriggerPipeline
     trigger:
       branches:
-      - main
       - azure-pipelines-wens-test
 
 pool:
