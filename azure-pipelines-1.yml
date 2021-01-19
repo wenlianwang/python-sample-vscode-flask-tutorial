@@ -4,11 +4,12 @@
 # https://aka.ms/yaml
 resources:
   pipelines:
-    - pipeline: Trigger
-      source: TriggerPipeline
-trigger:
-- main
-- azure-pipelines-wens-test
+  - pipeline: Trigger
+    source: TriggerPipeline
+    trigger:
+      branches:
+      - main
+      - azure-pipelines-wens-test
 
 pool:
   vmImage: 'ubuntu-latest'
