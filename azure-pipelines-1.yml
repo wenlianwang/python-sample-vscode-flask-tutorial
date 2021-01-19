@@ -8,6 +8,7 @@ resources:
       source: TriggerPipeline
 trigger:
 - main
+- azure-pipelines-wens-test
 
 pool:
   vmImage: 'ubuntu-latest'
