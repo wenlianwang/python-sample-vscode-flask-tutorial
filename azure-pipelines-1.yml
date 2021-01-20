@@ -15,7 +15,7 @@ resources:
       - azure-pipelines-wens-test
 
 steps:
-- script: echo triggered by source ${{resources.pipeline.myTrigger.pipelineName}}
+- script: echo triggered by source $(resources.pipeline.myTrigger.pipelineName)
   displayName: 'Run a one-line script'
 
 - script: |
