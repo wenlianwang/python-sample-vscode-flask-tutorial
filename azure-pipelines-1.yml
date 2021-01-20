@@ -24,7 +24,7 @@ steps:
   inputs:
     buildType: 'specific'
     project: 'wenlianw'
-    pipeline: '229'
+    pipeline: 'triggerPipeline'
     buildVersionToDownload: 'latest'
     downloadType: 'specific'
     downloadPath: '$(System.ArtifactsDirectory)'
