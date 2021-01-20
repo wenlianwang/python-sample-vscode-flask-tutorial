@@ -10,7 +10,10 @@ resources:
   pipelines:
   - pipeline: myTrigger
     source: triggerPipeline
-
+    trigger:
+      branches:
+      - master
+trigger: none
 steps:
 - script: echo triggered by source $(resources.pipeline.myTrigger.pipelineName)
   displayName: 'Run a one-line script'
