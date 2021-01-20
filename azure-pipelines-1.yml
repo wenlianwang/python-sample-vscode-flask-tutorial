@@ -23,7 +23,7 @@ steps:
   displayName: 'Download variables'
   inputs:
     buildType: 'specific'
-    project: '<YOUR_PROJECT_ID_HERE>'
+    project: 'wenlianw'
     pipeline: '229'
     buildVersionToDownload: 'latest'
     downloadType: 'specific'
