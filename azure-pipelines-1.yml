@@ -8,14 +8,14 @@ pool:
 
 resources:
   pipelines:
-  - pipeline: triggerPipeline
+  - pipeline: myTrigger
     source: triggerPipeline
     trigger:
       branches:
       - azure-pipelines-wens-test
 
 steps:
-- script: echo Hello, world!
+- script: echo triggered by source ${{resources.pipeline.myTrigger.pipelineName}}
   displayName: 'Run a one-line script'
 
 - script: |
