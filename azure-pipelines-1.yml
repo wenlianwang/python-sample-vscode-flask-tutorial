@@ -10,9 +10,6 @@ resources:
   pipelines:
   - pipeline: myTrigger
     source: triggerPipeline
-    trigger:
-      branches:
-      - azure-pipelines-wens-test
 
 steps:
 - script: echo triggered by source $(resources.pipeline.myTrigger.pipelineName)
