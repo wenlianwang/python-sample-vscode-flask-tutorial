@@ -1,0 +1,38 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+resources:
+  pipelines:
+  - pipeline: myTrigger
+    source: triggerPipeline
+    trigger: 
+      branches:
+      - master
+
+trigger: none
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: 'env | sort'
+  displayName: "echo Environment Variables"
+- task: DownloadBuildArtifacts@0
+  displayName: 'Download variables'
+  inputs:
+    buildType: 'specific'
+    project: 'wenlianw'
+    pipeline: 'triggerPipeline'
+    buildVersionToDownload: 'latest'
+    downloadType: 'specific'
+    downloadPath: '$(System.ArtifactsDirectory)'
+
+- script: cat $(System.ArtifactsDirectory)/variables/pipeline.env
+  displayName: 'Restore Enviornment Variables'
+- script: echo "FOO:$(FOO)"
+  displayName: 'echo envrionemtn variables'
+
+- script: echo triggered by source $(resources.pipeline.myTrigger.pipelineName)
+  displayName: 'Run a one-line script'
