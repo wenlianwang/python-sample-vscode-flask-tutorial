@@ -78,6 +78,8 @@ stages:
     - script: echo $(Build.SourceBranchName)
 
 - stage: TestArtifacts
+  dependsOn: TestfromMainBranch
+  condition: succeeded()
   jobs: 
   - job: main
     steps:
